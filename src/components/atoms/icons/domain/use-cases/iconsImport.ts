@@ -29,6 +29,8 @@ import Help from "../../presentations/Help"
 import Settings from "../../presentations/Settings"
 import Password from "../../presentations/Password"
 import SignOut from "../../presentations/SignOut"
+import IconDrawer from "../../presentations/IconDrawer"
+import Eye from "../../presentations/Eye"
 
 export const iconsImport = {
   ProAdvisio,
@@ -62,4 +64,6 @@ export const iconsImport = {
   Settings,
   Password,
   SignOut,
+  IconDrawer,
+  Eye,
 } as const

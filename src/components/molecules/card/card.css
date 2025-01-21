@@ -1,0 +1,87 @@
+.custom-card {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	border-radius: 20px;
+	align-items: center;
+	background: var(--gray);
+	padding: 20px;
+	box-sizing: border-box;
+	overflow: hidden;
+	transition: background 0.3s;
+	box-shadow: 0 7px 25px 0 rgba(0, 0, 0, 0.1);
+
+
+
+}
+.custom-card:hover {
+	background: var(--blue-ribbon); 
+	border: 2px solid var(--border-hover-card);
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.custom-card:hover .bold-title,
+.custom-card:hover .card-subtitle,
+.custom-card:hover .icon-container .icon {
+  color: var(--white);
+  stroke: var(--white); 
+}
+
+.custom-card .icon-container .icon {
+color: var(--gray-edward);}
+	
+
+.card-subtitle {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px;
+	letter-spacing: -0.05rem;
+	color: var(--gray-edward);
+}
+
+
+
+.custom-card-wave {
+	width: 100%;
+	background-image: url('../../../assets/bgVectorCard.svg'),
+		linear-gradient(96.71deg, #ffffff 44.74%, #8aacd7 124.77%);
+	background-position: right;
+	background-repeat: no-repeat;
+	background-position-y: bottom;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	gap: 5px;
+	border-radius: 19px;
+}
+.linear-gradient {
+	background: linear-gradient(96.71deg, #ffffff 44.74%, #8aacd7 124.77%);
+	background-position: right;
+	background-repeat: no-repeat;
+	background-position-y: bottom;
+  }
+
+.cont-header-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+	width: 100%;
+}
+
+
+@media screen and (max-width: 1200px){
+	.card-subtitle{
+		font-size: 14px;
+	}
+	.custom-card{
+		padding: 1rem;
+	}
+}
+@media screen and (max-width: 1080px){
+	.card-subtitle{
+		font-size: 12px;
+	}	
+}

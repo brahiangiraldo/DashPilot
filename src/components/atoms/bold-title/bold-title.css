@@ -1,0 +1,16 @@
+.bold-title {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 32px;
+  letter-spacing: -0.035em;
+  color: var(--blue-ribbon);
+  margin-bottom: 10px;
+}
+
+.bold-title:hover {
+  color: var(--white); /* Cambio realizado aquí */
+}
