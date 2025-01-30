@@ -1,0 +1,167 @@
+import type { Meta, StoryObj } from "@storybook/react"
+import Table from "./Table"
+import { Column } from "./TableProps" // Importa el tipo Column
+
+const meta: Meta<typeof Table> = {
+  title: "Components/Organism/Table",
+  component: Table,
+  parameters: {
+    layout: "fullscreen",
+  },
+}
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+// Definimos las columnas para la tabla
+const columns: Column[] = [
+  { header: "ID", accessor: "id" },
+  { header: "DNI", accessor: "dni" },
+  { header: "Name", accessor: "name" },
+  { header: "Last Name", accessor: "lastName" },
+  { header: "Email", accessor: "email" },
+  { header: "Career", accessor: "career" },
+  { header: "Phone Number", accessor: "phoneNumber" },
+  { header: "Created At", accessor: "createdAt" },
+  { header: "Status", accessor: "status" },
+  { header: "Actions", accessor: "actions" },
+]
+
+// Definimos los datos para la tabla
+const rows = [
+  {
+    id: 1,
+    dni: "12345678",
+    name: "Alice",
+    lastName: "Johnson",
+    email: "alice.johnson@example.com",
+    career: "Mechanical Engineering",
+    phoneNumber: "123-456-7890",
+    createdAt: "2023-01-01",
+    status: "active",
+    actions: "Edit",
+  },
+  {
+    id: 2,
+    dni: "23456789",
+    name: "Bob",
+    lastName: "Williams",
+    email: "bob.williams@example.com",
+    career: "Civil Engineering",
+    phoneNumber: "234-567-8901",
+    createdAt: "2023-02-15",
+    status: "inactive",
+    actions: "Edit",
+  },
+  {
+    id: 3,
+    dni: "34567890",
+    name: "Charlie",
+    lastName: "Brown",
+    email: "charlie.brown@example.com",
+    career: "Software Engineering",
+    phoneNumber: "345-678-9012",
+    createdAt: "2023-03-20",
+    status: "active",
+    actions: "Edit",
+  },
+  {
+    id: 4,
+    dni: "45678901",
+    name: "David",
+    lastName: "Smith",
+    email: "david.smith@example.com",
+    career: "Electrical Engineering",
+    phoneNumber: "456-789-0123",
+    createdAt: "2023-04-25",
+    status: "inactive",
+    actions: "Edit",
+  },
+  {
+    id: 5,
+    dni: "56789012",
+    name: "Eve",
+    lastName: "Davis",
+    email: "eve.davis@example.com",
+    career: "Chemical Engineering",
+    phoneNumber: "567-890-1234",
+    createdAt: "2023-05-30",
+    status: "active",
+    actions: "Edit",
+  },
+  {
+    id: 6,
+    dni: "67890123",
+    name: "Frank",
+    lastName: "Miller",
+    email: "frank.miller@example.com",
+    career: "Biomedical Engineering",
+    phoneNumber: "678-901-2345",
+    createdAt: "2023-06-10",
+    status: "inactive",
+    actions: "Edit",
+  },
+  {
+    id: 7,
+    dni: "78901234",
+    name: "Grace",
+    lastName: "Wilson",
+    email: "grace.wilson@example.com",
+    career: "Aerospace Engineering",
+    phoneNumber: "789-012-3456",
+    createdAt: "2023-07-15",
+    status: "active",
+    actions: "Edit",
+  },
+  {
+    id: 8,
+    dni: "89012345",
+    name: "Hank",
+    lastName: "Moore",
+    email: "hank.moore@example.com",
+    career: "Environmental Engineering",
+    phoneNumber: "890-123-4567",
+    createdAt: "2023-08-20",
+    status: "inactive",
+    actions: "Edit",
+  },
+  {
+    id: 9,
+    dni: "90123456",
+    name: "Ivy",
+    lastName: "Taylor",
+    email: "ivy.taylor@example.com",
+    career: "Industrial Engineering",
+    phoneNumber: "901-234-5678",
+    createdAt: "2023-09-25",
+    status: "active",
+    actions: "Edit",
+  },
+  {
+    id: 10,
+    dni: "01234567",
+    name: "Jack",
+    lastName: "Anderson",
+    email: "jack.anderson@example.com",
+    career: "Materials Engineering",
+    phoneNumber: "012-345-6789",
+    createdAt: "2023-10-30",
+    status: "inactive",
+    actions: "Edit",
+  },
+]
+// Historia para la tabla
+export const DefaultTable: Story = {
+  args: {
+    columns: columns,
+    rows: rows,
+    minCellWidth: 100,
+    height: "500px",
+    bgNeutral: true,
+    handleOrder: (index) => console.log("Order column:", index),
+    orderDesc: false,
+    tableHeight: "50px",
+    activeIndex: 0,
+    mouseDown: (index) => console.log("Mouse down on column:", index),
+  },
+}

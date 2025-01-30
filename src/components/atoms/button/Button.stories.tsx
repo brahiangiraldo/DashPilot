@@ -1,13 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import Button from './Button'
+import type { Meta, StoryObj } from "@storybook/react"
+import Button from "./Button"
 
 const meta = {
-  title: 'Components/Atoms/Button',
+  title: "Components/Atoms/Button",
   component: Button,
   parameters: {
-    layout: 'padded', // centered, fullscreen, padded
+    layout: "padded", // centered, fullscreen, padded
   },
-  // tags: ['autodocs'],
   argTypes: {
     bgStyle: {
       options: ["primary", "secondary", "tertiary", "blue", "black", "light"],
@@ -19,6 +18,9 @@ const meta = {
     },
     textSize: {
       control: { type: "number", min: 1 },
+    },
+    showIcon: {
+      control: { type: "boolean" },
     },
   },
 } satisfies Meta<typeof Button>
@@ -35,7 +37,8 @@ export const button: Story = {
     redirectTo: "/home",
     disable: false,
     borderRadius: 9,
-    children: 'Button'
+    children: "Button",
+    showIcon: true,
   },
-  render: (args) => <Button {...args}>{args.children}</Button>
+  render: (args) => <Button {...args}>{args.children}</Button>,
 }

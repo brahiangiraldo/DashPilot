@@ -1,0 +1,12 @@
+.icon-button {
+	position: relative;
+	background-color: var(--bg-btn-icon);
+	border: 1px solid var(--border-btn-icon);
+	border-radius: 6px;
+	width: 32px;
+	height: 28px;
+	display: grid;
+	place-items: center;
+	overflow: hidden;
+	cursor: pointer;
+}

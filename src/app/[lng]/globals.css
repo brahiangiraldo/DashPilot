@@ -20,6 +20,7 @@
 	--primary: #FF735C;
 	--secondary: #FFF1EE;
 	--tertiary: #474698;
+	--primary600: #bcbcbc;
 	--main: #1E1F4B;
 	--white: #fff;
 	--blue-ribbon: #0066FF;
@@ -30,11 +31,21 @@
 	--gray-silver: #929292;
 	--gray-silver-chalice: #9D9D9D;
 	--gray-dove: #707070;
+	--gray200: #d3d3d3;
+	--gray500: #757575;
+	--gray600: #5b5b5b;
 	--slate-gray: #64748B;
 	--black: #000;
 	--dark: #333;
 	--dark-scorpion: #585858;
 	--dark-outer-space: #212828;
+
+	/******Text Colors******/
+	--table-head: #6e6893;
+
+
+
+
 
 	/* ---- gradients ---- */
 

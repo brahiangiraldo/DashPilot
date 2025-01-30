@@ -1,6 +1,7 @@
-import styles from './button.module.css'
-
-import { ButtonProps } from './ButtonProps'
+import React from "react"
+import { IconFactory } from "@/components/atoms/icons/domain/use-cases/factoryIcon"
+import styles from "./button.module.css"
+import { ButtonProps } from "./ButtonProps"
 
 const Button = ({
   children,
@@ -11,18 +12,19 @@ const Button = ({
   onClick,
   redirectTo,
   disable,
-  borderRadius = 50
+  borderRadius = 50,
+  showIcon = false,
 }: ButtonProps) => {
   const onRedirect = () => {
     if (redirectTo) {
-      return (window.location.href = redirectTo);
+      return (window.location.href = redirectTo)
     }
-  };
+  }
 
   return (
     <button
       onClick={disable ? () => {} : redirectTo ? onRedirect : onClick}
-      className={`${styles.button} ${bgStyle ? styles[bgStyle] : ''} ${size ? styles[size] : ''}`}
+      className={`${styles.button} ${bgStyle ? styles[bgStyle] : ""} ${size ? styles[size] : ""}`}
       type={type}
       disabled={disable}
       style={{
@@ -30,9 +32,19 @@ const Button = ({
         borderRadius: `${borderRadius}px`,
       }}
     >
+      {showIcon && (
+        <span className={styles.icon}>
+          <IconFactory
+            width={15}
+            height={15}
+            color="currentColor"
+            name="Search"
+          />
+        </span>
+      )}
       {children}
     </button>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button

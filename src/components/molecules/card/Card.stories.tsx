@@ -40,7 +40,7 @@ export const exampleCard1: Story = {
     subtitle: "Daily Views",
     showWave: false,
     widget: <IconFactory color="#9c9c9c" height={102} width={104} name="Eye" />,
-    percentageWidth: 20,
+    percentageWidth: 40,
     percentageHeight: 5,
     linearGradient: true,
   },
@@ -52,6 +52,7 @@ export const exampleCard2: Story = {
     showWave: true,
     widget: <ProgressCircle percentage={45} size="md" />,
     linearGradient: false,
+    percentageWidth: 40,
   },
 }
 
@@ -61,5 +62,6 @@ export const exampleCard3: Story = {
     showWave: false,
     widget: <ProgressCircle percentage={45} size="md" />,
     linearGradient: true,
+    percentageWidth: 40,
   },
 }

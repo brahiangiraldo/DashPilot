@@ -1,51 +1,47 @@
-import styles from './formContact.module.css'
+import styles from "./formContact.module.css"
 
-import Input from '@/components/atoms/input/Input'
-import { FormContactParams, FormContactProps } from './FormContactProps'
-import Textarea from '@/components/atoms/textarea/Textarea'
-import Button from '@/components/atoms/button/Button'
-import Checkbox from '@/components/atoms/checkbox/Checkbox'
-import Alert from '@/components/molecules/alert/Alert'
-import useSendForm from './hooks/useSendForm'
-import getLanguage, { LanguagesType } from '@/models/i18n'
-import InputPhone from '@/components/atoms/inputPhone/InputPhone'
+import Input from "@/components/atoms/input/Input"
+import { FormContactParams, FormContactProps } from "./FormContactProps"
+import Textarea from "@/components/atoms/textarea/Textarea"
+import Button from "@/components/atoms/button/Button"
+
+import Alert from "@/components/molecules/alert/Alert"
+import useSendForm from "./hooks/useSendForm"
+import getLanguage, { LanguagesType } from "@/models/i18n"
+import InputPhone from "@/components/atoms/inputPhone/InputPhone"
+import Checkbox from "@/components/atoms/checkbox/Checkbox"
 
 const formInit: FormContactParams = {
-  first_name: '',
-  last_name: '',
-  email: '',
-  code_number: '',
-  code_country: '',
-  phone_number: '',
-  policies: false
+  first_name: "",
+  last_name: "",
+  email: "",
+  code_number: "",
+  code_country: "",
+  phone_number: "",
+  policies: false,
 }
 
-const FormContact = ({
-  lng,
-  defaultLang
-}: FormContactProps) => {
+const FormContact = ({ lng, defaultLang }: FormContactProps) => {
   const translate = getLanguage(lng)
   const {
     onSubmit,
     onStatus,
     error,
-    formState, 
-    onInput, 
-    onCheck, 
-    onDisableButton, 
+    formState,
+    onInput,
+    onCheck,
+    onDisableButton,
     buttonState,
     country,
     countryState,
-    onChangeStateCountry
+    onChangeStateCountry,
   } = useSendForm(formInit, lng)
- 
+
   return (
     <div className={styles.form_contact}>
       <form onSubmit={onSubmit}>
         <div className={styles.form_contact__content}>
-          {
-            error.status && <Alert {...error} onStatus={onStatus} fixed />
-          }
+          {error.status && <Alert {...error} onStatus={onStatus} fixed />}
           <div className={styles.form_contact__row}>
             <div className={styles.form_contact__group}>
               <Input
@@ -87,7 +83,7 @@ const FormContact = ({
               />
             </div>
             <div className={styles.form_contact__group}>
-            <InputPhone
+              <InputPhone
                 name="phone_number"
                 onChange={onInput}
                 type="number"
@@ -103,25 +99,33 @@ const FormContact = ({
                 onSelectCountry={onChangeStateCountry}
               />
             </div>
-            <div className={`${styles.form_contact__group} ${styles.form_contact__group___full}`}>
+            <div
+              className={`${styles.form_contact__group} ${styles.form_contact__group___full}`}
+            >
               <Checkbox
-                name="policies"
+                name="Search"
                 onChange={onCheck}
                 label={translate.FORM.TERMS_TEXT}
                 size={18}
                 colorActive="#FF735C"
                 color="#FF735C"
-                checked={formState.policies !== undefined ? formState.policies : false}
+                checked={
+                  formState.policies !== undefined ? formState.policies : false
+                }
                 redirectTo={`/${lng}/terms-and-conditions`}
               />
             </div>
-            <div className={`${styles.form_contact__group} ${styles.form_contact__group___last}`}>
+            <div
+              className={`${styles.form_contact__group} ${styles.form_contact__group___last}`}
+            >
               <Button
                 bgStyle="primary"
                 size="auto"
                 textSize={18}
                 disable={buttonState || !formState.policies ? true : false}
-              >{translate.FORM.SEND_BTN}</Button>
+              >
+                {translate.FORM.SEND_BTN}
+              </Button>
             </div>
           </div>
         </div>

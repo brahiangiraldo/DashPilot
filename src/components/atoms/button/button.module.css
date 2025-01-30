@@ -18,11 +18,20 @@
 	white-space: pre-wrap;
 	text-overflow: ellipsis;
 	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .button:hover {
 	background: var(--white);
 }
+
+.icon {
+	margin-right: 8px;
+	display: flex;
+	align-items: center;
+  }
 
 /* --- backgrounds --- */
 

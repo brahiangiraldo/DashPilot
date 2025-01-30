@@ -1,0 +1,51 @@
+.section-data-table {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 16px;
+}
+
+.resizeable-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.table-header {
+  border-bottom: 20px solid transparent;
+}
+
+.resizeable-table thead th {
+  font-weight: 600;
+  text-align: left; 
+}
+
+.resizeable-table tr {
+  color: #000000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.resizeable-table tr:last-child {
+  border-bottom: none;
+}
+
+.resizeable-table tbody tr:hover {
+  background: #007bff;
+  color: #ffffff;
+}
+
+.resizeable-table tr td {
+    padding: 10px 0;
+  text-align: left; 
+}
+
+.resizeable-table tr td:last-child {
+  text-align: left; 
+}
+
+.resizeable-table tr td:nth-child(2),
+.resizeable-table tr td:nth-child(3) {
+  text-align: left;
+}

@@ -1,9 +1,9 @@
-import { BackgroundType } from '@/models/types/BackgroundType'
-import { SizeType } from '@/models/types/SizeType'
+import { BackgroundType } from "@/models/types/BackgroundType"
+import { SizeType } from "@/models/types/SizeType"
 
 export interface ButtonProps {
   children: JSX.Element | string
-  type?: 'button' | 'reset' | 'submit'
+  type?: "button" | "reset" | "submit"
   bgStyle?: BackgroundType
   size?: SizeType
   textSize?: number
@@ -11,4 +11,5 @@ export interface ButtonProps {
   redirectTo?: string
   disable?: boolean
   borderRadius?: number
+  showIcon?: boolean
 }
